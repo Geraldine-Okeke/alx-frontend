@@ -216,13 +216,14 @@ template {
 
   --section-title-margin: 0;
   --section-title-color: var(--color-black);
-  --nav-item-font-family : var(--font-family-title);
-  --nav-item-font-weight : var(--font-weight-bold);
-  --nav-item-font-size :var(--font-size-medium);
-  --nav-item-letter-spacing : var(--letter-spacing-4percent);
-  --nav-item-display : inline-block;
-  --nav-tem-margin:  0 0 calc(3 * var(--root-font-size)) 0;;
-  --nav-item-link-hover : var(--color-primary);
+  --nav-item-font-family: var(--font-family-title);
+  --nav-item-font-weight: var(--font-weight-bold);
+  --nav-item-font-size: var(--font-size-medium);
+  --nav-item-letter-spacing: 4%;
+  --nav-item-display: inline-block;
+  --nav-item-margin: 0;
+  --nav-item-link-hover: var(--color-primary);
+  
 }
 
 *, *:before, *:after{
@@ -312,32 +313,35 @@ a:hover {
 a:active {
   background-color: var(--color-light-grey);
 }
-.navbar-menu{
+.navbar-menu {
   float: right;
 }
-.nav{
+
+/* For the nav class */
+.nav {
   margin: 0;
   padding: 0;
-  text-decoration: none;
+  list-style: none; /* Remove the default list styling */
   text-align: center;
 }
-.nav .nav-item{
-  font-family: inherit;
-  font-weight: inherit;
-  font-size: inherit;
-  letter-spacing: inherit;
-  display: inherit;
-  margin: inherit;
 
+/* For the nav-item class in nav class */
+.nav-item {
+  font-family: var(--nav-item-font-family, var(--font-family-title));
+  font-weight: var(--nav-item-font-weight, var(--font-weight-bold));
+  font-size: var(--nav-item-font-size, var(--font-size-medium));
+  letter-spacing: var(--nav-item-letter-spacing, var(--letter-spacing-4percent));
+  display: var(--nav-item-display, inline-block);
+  margin: var(--nav-item-margin, 0);
 }
-.nav .nav-link{
+
+/* For the nav-link class in nav class */
+.nav-link {
   display: block;
   padding: calc(0.5 * var(--root-font-size)) var(--root-font-size);
+}
 
-}
+/* Hover Style */
 .nav-link:hover {
-  color: var(--color-primary); /* Set foreground color to nav-item-link-hover (assuming you want the same primary color) */
-}
-.nav-item:hover a {
-  color: var(--color-primary);
+  color: var(--nav-item-link-hover, var(--color-primary));
 }
