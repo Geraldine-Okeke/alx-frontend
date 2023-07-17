@@ -14,3 +14,10 @@
   float: none;
   padding: 0;
 }
+
+
+.col-1-3[class^="col-"],
+.col-1-2[class^="col-"] {
+  float: left;
+  padding: 0.5rem; 
+}
