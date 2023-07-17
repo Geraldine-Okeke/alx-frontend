@@ -1,0 +1,82 @@
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+[class^="col-"] {
+  float: left;
+  padding: calc(0.5 * var(--root-font-size));
+}
+
+
+.col-1-3,
+.col-1-2 {
+  float: none;
+  padding: 0;
+}
+
+
+.col-1-3[class^="col-"],
+.col-1-2[class^="col-"] {
+  float: left;
+  padding: 0.5rem; 
+}
+
+[data-section-theme="dark"] {
+  --text-color: var(--color-white);
+  --section-title-color: var(--color-white);
+  background-color: var(--color-black);
+}
+.footer-address {
+  color: var(--text-color);
+}
+.social-link {
+  display: block;
+}
+.social-link svg {
+  fill: var(--text-color);
+}
+.card-services .card-title {
+  margin: 0;
+}
+.card-services a {
+  display: block;
+  padding: calc(2 * var(--root-font-size));
+  background-color: var(--color-light-grey);
+  text-decoration: none;
+}
+.card-services a:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+:root {
+  --button-display: inline-block;
+  --button-padding: 1.5rem 3rem;
+  --button-border: 0.2rem solid var(--color-primary);
+  --button-color: var(--color-black);
+  --button-text-decoration: none;
+  --button-font-size: var(--font-size-large);
+  --button-hover-color: var(--color-white);
+  --button-hover-text-decoration: none;
+  --button-hover-background: var(--color-primary);
+}
+
+a:active {
+  /* Existing styles... */
+}
+button {
+  display: var(--button-display);
+  padding: var(--button-padding);
+  border: var(--button-border);
+  font-size: var(--button-font-size);
+  color: var(--button-color);
+  text-decoration: var(--button-text-decoration);
+}
+button:hover {
+  color: var(--button-hover-color);
+  text-decoration: var(--button-hover-text-decoration);
+  background: var(--button-hover-background);
+}
+[data-section-theme="dark"] {
+  --button-color: var(--color-white);
+}
