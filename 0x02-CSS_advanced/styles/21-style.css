@@ -1,0 +1,19 @@
+/* CSS rule for a new row */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* CSS rule for all classes starting with col- */
+[class^="col-"] {
+  float: left;
+  padding: calc(0.5 * var(--root-font-size));
+}
+
+/* Specific CSS rules for col-1-3 and col-1-2 classes */
+.col-1-3,
+.col-1-2 {
+  float: none;
+  padding: 0;
+}
